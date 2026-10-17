@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Example (Svelte)</title>
+        <!-- The sd-computers SDK. The computer puts it into the page by itself; loading it here as
+             well makes it there from the start, and lets a page served from somewhere else (the
+             dev server, `npm run dev`) use it. In a plain browser tab it does not load, and
+             src/computer.js stands in. -->
+        <script src="https://cfx-nui-sd-computers/web/build/sdk/sdcomputers.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="module" src="./src/main.js"></script>
+    </body>
+</html>

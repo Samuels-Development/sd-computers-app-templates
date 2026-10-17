@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Example (Vanilla JS)</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- The sd-computers SDK. The computer puts it into the page by itself; loading it here as
+         well makes it there from the first line of app.js, and lets a page served from somewhere
+         else (a dev server) use it. In a plain browser tab it does not load: computer.js stands in. -->
+    <script src="https://cfx-nui-sd-computers/web/build/sdk/sdcomputers.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <img src="icon.svg" alt="" />
+        <div>
+          <h1 id="label">Example</h1>
+          <p id="stack">sd-computers app template</p>
+        </div>
+        <div class="where">
+          <b id="machine">-</b>
+          <span id="who">-</span>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <div class="card-head">
+            <span class="card-title">From your game</span>
+            <span class="tag">fetchNui</span>
+            <button type="button" class="link" id="refreshGame">Refresh</button>
+          </div>
+          <div class="row"><span class="k">Player</span><span class="v" id="player">-</span></div>
+          <div class="row"><span class="k">Server ID</span><span class="v" id="serverId">-</span></div>
+          <div class="row"><span class="k">Street</span><span class="v" id="street">-</span></div>
+          <div class="row"><span class="k">In-game time</span><span class="v" id="gameTime">-</span></div>
+          <p class="hint">Answered by client.lua's getExampleData NUI callback.</p>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <span class="card-title">From the server</span>
+            <span class="tag">callServer</span>
+            <button type="button" class="link" id="refreshServer">Refresh</button>
+          </div>
+          <div class="row"><span class="k">You</span><span class="v" id="you">-</span></div>
+          <div class="row"><span class="k">Computer</span><span class="v" id="computer">-</span></div>
+          <div class="row"><span class="k">Players online</span><span class="v" id="online">-</span></div>
+          <div class="row"><span class="k">Server time</span><span class="v" id="serverTime">-</span></div>
+          <p class="error" id="serverError" hidden></p>
+          <p class="hint">Answered by the example:status endpoint in server.lua.</p>
+        </section>
+
+        <section class="card wide">
+          <div class="card-head">
+            <span class="card-title">Notes</span>
+            <span class="tag">storage</span>
+            <span class="hint" id="notesState" style="margin: 0 0 0 auto"></span>
+          </div>
+          <textarea id="notes" placeholder="Type anything. It is kept for this character, on every computer."></textarea>
+        </section>
+
+        <section class="card wide">
+          <div class="card-head">
+            <span class="card-title">Pushed from Lua</span>
+            <span class="tag">onMessage</span>
+          </div>
+          <div class="ping empty" id="ping">Nothing yet.</div>
+          <p class="hint" id="pingHint"></p>
+        </section>
+      </main>
+
+      <footer class="actions">
+        <button type="button" class="btn primary" id="notify">Notify</button>
+        <button type="button" class="btn" id="confirm">Confirm</button>
+        <button type="button" class="btn" id="ask">Ask</button>
+        <button type="button" class="btn" id="menu">Menu</button>
+        <button type="button" class="btn" id="badge">Badge +1</button>
+        <button type="button" class="btn" id="print">Print notes</button>
+        <button type="button" class="btn" id="mail">Open Mail</button>
+        <span class="result" id="result"></span>
+      </footer>
+    </div>
+
+    <script src="computer.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
