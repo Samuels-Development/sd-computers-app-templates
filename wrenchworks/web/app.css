@@ -122,8 +122,7 @@ html[data-style='retro'] .ww {
 }
 
 .ww-word {
-  font: 700 21px/1 var(--head);
-  font-stretch: condensed;
+  font: 700 condensed 21px/1 var(--head);
   letter-spacing: 0.06em;
 }
 
